@@ -31,7 +31,8 @@ Citizen.CreateThread(function()
                         if pos == #listPosicoes then 
                             pos = 1
                         else 
-                            pos = pos + 1 
+                            pos = pos + 1
+                            TriggerEvent("sounds:source","cash",1)
                         end
                     end
                 end
