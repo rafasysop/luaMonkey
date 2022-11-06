@@ -31,6 +31,7 @@ Citizen.CreateThread(function()
                     if IsControlJustPressed(0,38) then 
                         if pos == #listPosicoes then 
                             pos = 1
+                            TriggerEvent("sounds:source","deathcop",1)
                         else 
                             pos = pos + 1 
                             TriggerEvent("sounds:source","cash",1)
