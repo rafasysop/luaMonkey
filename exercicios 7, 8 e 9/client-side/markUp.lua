@@ -39,6 +39,7 @@ Citizen.CreateThread(function()
                             RemoveBlip(blips)
                         end
                         inService = false
+                        pos = 1
                     end
                 else
                     drawTxt("PRESSIONE  ~g~E~w~ PARA ENTRAR EM ~r~SERVIÇO", 4, 0.5, 0.7, 0.8, 250, 250, 250,180)
