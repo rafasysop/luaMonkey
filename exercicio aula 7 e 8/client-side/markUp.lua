@@ -17,14 +17,20 @@ local inService = false
 local blips = nil
 
 Citizen.CreateThread(function()
+    local posService = {
+        [1] = 132.91,
+        [2] = -989.7,
+        [3] = 29.36
+    }
+
     while true do
         local timeWaiting = 1000
         local pedPalyer = PlayerPedId()
         local coordsPlayer = GetEntityCoords(pedPalyer)
-        local diffDistance = #(vector3(coordsPlayer[1], coordsPlayer[2], coordsPlayer[3]) - vector3(132.91,-989.7,29.36))
+        local diffDistance = #(vector3(coordsPlayer[1], coordsPlayer[2], coordsPlayer[3]) - vector3(posService[1], posService[2], posService[3]))
         if diffDistance < 20.0 then
             timeWaiting = 5
-            DrawMarker(3,132.91,-989.7,29.36,0,0,0,0,0,0,2.00,2.00,2.00,255,6,6,100,0,0,0,1)
+            DrawMarker(3,posService[1], posService[2], posService[3],0,0,0,0,0,0,2.00,2.00,2.00,255,6,6,100,0,0,0,1)
             if diffDistance < 2.0 then 
                 if inService then
                     drawTxt("PRESSIONE  ~g~E~w~ PARA SAIR DO ~r~SERVIÇO", 4, 0.5, 0.7, 0.8, 250, 250, 250,180)
